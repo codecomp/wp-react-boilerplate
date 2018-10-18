@@ -2,16 +2,16 @@ import React from 'react';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 import importedComponent from 'react-imported-component';
 
-import Home from './Home';
-import Loading from './Loading';
+import Home from './layouts/Home';
+import Loading from './elements/Loading';
 
 const AsyncDynamicPage = importedComponent(
-    () => import(/* webpackChunkName:'DynamicPage' */ './DynamicPage'), {
+    () => import(/* webpackChunkName:'DynamicPage' */ './layouts/DynamicPage'), {
         LoadingComponent: Loading
     }
 );
 const AsyncFourOhFour = importedComponent(
-    () => import(/* webpackChunkName:'FourOhFour' */ './FourOhFour'), {
+    () => import(/* webpackChunkName:'FourOhFour' */ './layouts/FourOhFour'), {
         LoadingComponent: Loading
     }
 );

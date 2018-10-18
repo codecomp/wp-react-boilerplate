@@ -38,7 +38,13 @@ npm run build:bundleanalyzer | Bundle the application for distribution and load 
 │   ├── favicon.ico           # → Application favicon
 │   └── index.html            # → Base application HTML template
 ├── src/                      # →
+│   ├── actions/              # → Application payload actions
 │   ├── components/           # → Component Library
+│   │   ├── blocks/           # → Block level components (reusable arrangements of element level components)
+│   │   ├── elements/         # → Element level components (buttons, icons, form fields, loading spinners)
+│   │   └── layouts/          # → Layout level components (page templates, archive templates)
+│   ├── reducers/             # → Reducers to handle state changes
+│   ├── utils/                # → Miscellaneous utility functions (mathematic computation etc)
 │   └── index.js              # → Application entry point
 ├── .babelrc                  # → Babel configuration
 └── webpack.config.js         # → Handles webpack validation and compilation of build or prod webpack config based on environment
@@ -61,9 +67,7 @@ Vendor splitting has been setup in build-utils/webpack.common.js for splitting o
 
 ### TODO
 
-* Setup component structure
 * Setup Redux
-* Setup folder structure for reducers, actions utils etc
 * Add Helmet to manage SEO meta
 * Setup for SSR
 * Setup CSS Modules for SCSS
