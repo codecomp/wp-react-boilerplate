@@ -1,0 +1,75 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "accessor-pairs": [
+            "error",
+            {
+                "getWithoutSet": true
+            }
+        ],
+        "curly": "warn",
+        "eqeqeq": "error",
+        "func-call-spacing": [
+            "error",
+            "never"
+        ],
+        "indent": [
+            "error",
+            4
+        ],
+        "keyword-spacing": [
+            "warn",
+            {
+                "before": true,
+                "after": true
+            }
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "max-len": [
+            "warn", {
+                "code": 120,
+                "ignoreComments": true
+            }
+        ],
+        "no-console": "warn",
+        "no-eval": "error",
+        "no-loop-func": "error",
+        "no-trailing-spaces": "warn",
+        "no-underscore-dangle": "warn",
+        "no-unused-vars": "warn",
+        "no-use-before-define": "error",
+        "no-var": "error",
+        "prefer-const": "error",
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "react/no-render-return-value": "off",
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
+}

@@ -21,6 +21,7 @@ npm run dev:bundleanalyzer | start the local development environment and load a 
 npm run prebuild | Cleans out previous production build files
 npm run build | Bundle the application for distribution
 npm run build:bundleanalyzer | Bundle the application for distribution and load a analysis of the distribution bundle
+npm run lint:js | Run eslint on project
 
 ### Folder structure
 
@@ -72,7 +73,6 @@ Vendor splitting has been setup in build-utils/webpack.common.js for splitting o
 * Setup for SSR
 * Setup CSS Modules for SCSS
 * Setup SCSS Linting
-* Setup ESLint
 * Configure matching CSS and Babel supported browser targets
 * Setup development tools required for remote content crawling
 * Setup and test localisation

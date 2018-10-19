@@ -9,7 +9,8 @@
     "dev:bundleanalyzer": "npm run dev -- --env.addons=bundleanalyzer",
     "prebuild": "rimraf dist",
     "build": "npm run prebuild && cross-env NODE_ENV=production webpack -p --env.env=prod",
-    "build:bundleanalyzer": "npm run build -- --env.addons=bundleanalyzer"
+    "build:bundleanalyzer": "npm run build -- --env.addons=bundleanalyzer",
+    "lint:js": "eslint . --ext .js,.jsx"
   },
   "repository": {
     "type": "git",
@@ -34,11 +35,14 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.2.1",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "chalk": "^2.4.1",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "cssnano": "^4.1.4",
+    "eslint": "^5.7.0",
+    "eslint-plugin-react": "^7.11.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.4",
     "postcss-loader": "^3.0.0",
