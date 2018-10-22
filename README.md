@@ -78,7 +78,6 @@ Vendor splitting has been setup in build-utils/webpack.common.js for splitting o
 
 ### TODO
 
-* Add Helmet to manage SEO meta
 * Setup for SSR
 * Setup development tools required for remote content crawling
 * Setup and test localisation

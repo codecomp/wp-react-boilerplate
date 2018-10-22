@@ -8,6 +8,7 @@ const config = {
             'react',
             'react-dom',
             'react-imported-component',
+            'react-helmet',
             'react-redux',
             'react-router-dom',
             'redux',

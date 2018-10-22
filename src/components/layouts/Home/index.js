@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import { h1 } from './style.scss';
 
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>Home</title>
+                <meta name='description' content="This content is uh-mazing!" />
+            </Helmet>
+
             <p className={h1}>Home</p>
 
             <h1>Lorem ipsum</h1>
