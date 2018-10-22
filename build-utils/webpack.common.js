@@ -4,10 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
     entry: {
         vendor: [
+            'lodash',
             'react',
             'react-dom',
             'react-imported-component',
-            'react-router-dom'
+            'react-redux',
+            'react-router-dom',
+            'redux',
+            'redux-form',
+            'redux-promise'
         ]
     },
     output: {

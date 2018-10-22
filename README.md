@@ -78,10 +78,8 @@ Vendor splitting has been setup in build-utils/webpack.common.js for splitting o
 
 ### TODO
 
-* Setup Redux
 * Add Helmet to manage SEO meta
 * Setup for SSR
-* Configure matching CSS and Babel supported browser targets
 * Setup development tools required for remote content crawling
 * Setup and test localisation
 * Look into TDD with mocha
