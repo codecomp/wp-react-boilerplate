@@ -3,9 +3,9 @@ module.exports = {
     plugins: [
         postcssPresetEnv({
             browsers: [
-                '>0.25%',
-                'not ie 11',
-                'not op_mini all'
+                "last 5 versions",
+                "ie 11",
+                "safari >= 7"
             ]
         }),
         require('cssnano')
