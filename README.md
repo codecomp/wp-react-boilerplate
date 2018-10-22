@@ -85,7 +85,6 @@ Vendor splitting has been setup in build-utils/webpack.common.js for splitting o
 * Setup development tools required for remote content crawling
 * Setup and test localisation
 * Look into TDD with mocha
-* Setup editorconfig file
 * Map WP default routes into App
 
 ### History
