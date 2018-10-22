@@ -10,7 +10,7 @@
     "prebuild": "rimraf dist",
     "build": "npm run prebuild && cross-env NODE_ENV=production webpack -p --env.env=prod",
     "build:bundleanalyzer": "npm run build -- --env.addons=bundleanalyzer",
-    "lint:js": "eslint . --ext .js,.jsx",
+    "lint:js": "node_modules/.bin/eslint . --ext .js,.jsx",
     "lint:css": "node_modules/.bin/sass-lint -v -q"
   },
   "repository": {
