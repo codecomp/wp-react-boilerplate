@@ -1,0 +1,12 @@
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+    $padding: unquote(($y / $x) * 100 + '%');
+    @if $pseudo {
+        &::before {
+            @include pseudo($pos: relative);
+            padding-top: $padding;
+            width: 100%;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}

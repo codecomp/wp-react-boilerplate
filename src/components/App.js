@@ -2,6 +2,8 @@ import React from 'react';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 import importedComponent from 'react-imported-component';
 
+import style from '../styles/main.scss';  // eslint-disable-line no-unused-vars
+
 import Home from './layouts/Home';
 import Loading from './elements/Loading';
 

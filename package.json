@@ -10,7 +10,8 @@
     "prebuild": "rimraf dist",
     "build": "npm run prebuild && cross-env NODE_ENV=production webpack -p --env.env=prod",
     "build:bundleanalyzer": "npm run build -- --env.addons=bundleanalyzer",
-    "lint:js": "eslint . --ext .js,.jsx"
+    "lint:js": "eslint . --ext .js,.jsx",
+    "lint:css": "node_modules/.bin/sass-lint -v -q"
   },
   "repository": {
     "type": "git",
@@ -45,10 +46,14 @@
     "eslint-plugin-react": "^7.11.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.9.4",
+    "normalize.css": "^8.0.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.1.1",
     "react-hot-loader": "^4.3.11",
     "rimraf": "^2.6.2",
+    "sass-lint": "^1.12.1",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.20.2",
     "webpack-bundle-analyzer": "^3.0.3",

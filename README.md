@@ -22,6 +22,7 @@ npm run prebuild | Cleans out previous production build files
 npm run build | Bundle the application for distribution
 npm run build:bundleanalyzer | Bundle the application for distribution and load a analysis of the distribution bundle
 npm run lint:js | Run eslint on project
+npm run lint:css | Run scss-lint on project
 
 ### Folder structure
 
@@ -45,6 +46,15 @@ npm run lint:js | Run eslint on project
 │   │   ├── elements/         # → Element level components (buttons, icons, form fields, loading spinners)
 │   │   └── layouts/          # → Layout level components (page templates, archive templates)
 │   ├── reducers/             # → Reducers to handle state changes
+│   ├── styles/               # →
+│   │   ├── helpers/          # → Helper mixins
+│   │   ├── misc/             # → Miscellaneous style sheets
+│   │   ├── objects/          # → Global object level SCSS
+│   │   ├── pages/            # → Global page level SCSS
+│   │   ├── placeholders/     # → Placeholder definitions
+│   │   ├── variables/        # → Site variable and map definitions
+│   │   └── main.scss         # → Global SCSS imports
+│   │   └── shell.scss        # → Index SCSS file for including into component SCSS files
 │   ├── utils/                # → Miscellaneous utility functions (mathematic computation etc)
 │   └── index.js              # → Application entry point
 ├── .babelrc                  # → Babel configuration
@@ -71,8 +81,6 @@ Vendor splitting has been setup in build-utils/webpack.common.js for splitting o
 * Setup Redux
 * Add Helmet to manage SEO meta
 * Setup for SSR
-* Setup CSS Modules for SCSS
-* Setup SCSS Linting
 * Configure matching CSS and Babel supported browser targets
 * Setup development tools required for remote content crawling
 * Setup and test localisation

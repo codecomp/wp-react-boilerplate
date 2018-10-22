@@ -1,0 +1,15 @@
+@import 'shell';
+
+$font-size: 60px;
+
+.h1 {
+    font-size: $font-size;
+
+    .span {
+        color: palette(type);
+    }
+
+    :global(.test) & {
+        color: palette(attention);
+    }
+}

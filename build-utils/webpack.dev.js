@@ -1,3 +1,4 @@
+const path = require('path');
 const commonPaths = require('./common-paths');
 const webpack = require('webpack');
 const port = process.env.PORT || 3000;
@@ -13,7 +14,7 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.(css|scss)$/,
                 use: [
                     {
                         loader: 'style-loader'
@@ -24,6 +25,15 @@ const config = {
                             modules: true,
                             camelCase: true,
                             sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            includePaths: [
+                                path.resolve(`${commonPaths.appEntry}/styles`),
+                                path.resolve(`${commonPaths.projectRoot}/node_modules/normalize.css`)
+                            ]
                         }
                     }
                 ]

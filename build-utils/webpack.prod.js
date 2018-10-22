@@ -1,3 +1,4 @@
+const path = require('path');
 const commonPaths = require('./common-paths');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -13,7 +14,7 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.(css|scss)$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -30,6 +31,15 @@ const config = {
                     },
                     {
                         loader: 'postcss-loader'
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            includePaths: [
+                                path.resolve(`${commonPaths.appEntry}/styles`),
+                                path.resolve(`${commonPaths.projectRoot}/node_modules/normalize.css`)
+                            ]
+                        }
                     }
                 ],
             }

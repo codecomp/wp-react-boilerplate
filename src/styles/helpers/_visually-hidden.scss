@@ -1,0 +1,48 @@
+// @desc Clear the visually hidden styles from an element given by the visually hidden mixin
+@mixin clear-visually-hidden {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+
+    @content;
+}
+
+//@param Hide only visually, but have it available for screen readers: h5bp.com/v
+@mixin visually-hidden($args: '') {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    @if index($args, no-js) {
+        .no-js & {
+            @include clear-visually-hidden {
+                @content;
+            }
+        }
+    }
+
+    @if index($args, js) {
+        .js & {
+            @include clear-visually-hidden {
+                @content
+            }
+        }
+    }
+
+    @if index($args, focusable) {
+        &:active,
+        &:focus {
+            @include clear-visually-hidden {
+                @content;
+            }
+        }
+    }
+}
