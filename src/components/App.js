@@ -1,32 +1,25 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
-import importedComponent from 'react-imported-component';
 
 import style from '../styles/main.scss';  // eslint-disable-line no-unused-vars
 
 import Home from './layouts/Home';
 import Loading from './elements/Loading';
 
-const AsyncDynamicPage = importedComponent(
-    () => import(/* webpackChunkName:'DynamicPage' */ './layouts/DynamicPage'), {
-        LoadingComponent: Loading
-    }
-);
-const AsyncFourOhFour = importedComponent(
-    () => import(/* webpackChunkName:'FourOhFour' */ './layouts/FourOhFour'), {
-        LoadingComponent: Loading
-    }
-);
+const AsyncDynamicPage = lazy(() => import(/* webpackChunkName:'DynamicPage' */ './layouts/DynamicPage'));
+const AsyncFourOhFour = lazy(() => import(/* webpackChunkName:'FourOhFour' */ './layouts/FourOhFour'));
 
 const App = () => {
     return (
         <Router>
             <div>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/dynamic" component={AsyncDynamicPage} />
-                    <Route component={AsyncFourOhFour} />
-                </Switch>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/dynamic" component={AsyncDynamicPage} />
+                        <Route component={AsyncFourOhFour} />
+                    </Switch>
+                </Suspense>
             </div>
         </Router>
     );

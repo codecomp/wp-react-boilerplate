@@ -63,15 +63,14 @@ npm run lint:css | Run scss-lint on project
 
 ### Optimisation
 
-react-imported-component has been included to ease asynchronous loading of components with code splitting. This also allows for the use of loading and error components to be assigned at the same time. The use of webpackChunkName will assist in debugging and assign the name to the split js file.
+React lazy has been used to ease asynchronous loading of components with code splitting. This also allows for the use of loading and error components to be assigned as wrappers. The use of webpackChunkName will assist in debugging and assign the name to the split js file.
 ```javaScript
-const AsyncComponent = importedComponent(
-    () => import(/* webpackChunkName:'NamedComponent' */ './NamedComponent'), {
-        LoadingComponent: Loading
-    }
-);
+import React, { lazy, Suspense } from 'react';
+const AsyncComponent = lazy(() => import(/* webpackChunkName:'NamedComponent' */ './NamedComponent'));
 ...
-<AsyncComponent />
+<Suspense fallback={<div>Loading...</div>}>
+    <AsyncComponent />
+</Suspense>
 ```
 
 Vendor splitting has been setup in build-utils/webpack.common.js for splitting out the global vendor packages.
