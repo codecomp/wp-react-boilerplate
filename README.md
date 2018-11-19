@@ -75,6 +75,18 @@ const AsyncComponent = lazy(() => import(/* webpackChunkName:'NamedComponent' */
 
 Vendor splitting has been setup in build-utils/webpack.common.js for splitting out the global vendor packages.
 
+### Environmental variables
+
+dotenv has been setup to load in variables from `development.env` and `production.env`. Variables can be defined as follows
+
+```shell
+APP_NAME="React Base"
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost
+```
+Then accessed using `process.env.APP_NAME`. When packaged this will be replaced with the corresponding variable.
+
 ### TODO
 
 * Setup for SSR

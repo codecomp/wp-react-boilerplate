@@ -2,6 +2,7 @@ const path = require('path');
 const commonPaths = require('./common-paths');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require('dotenv-webpack');
 const config = {
     mode: 'production',
     entry: {
@@ -49,6 +50,9 @@ const config = {
         new MiniCssExtractPlugin({
             filename: "styles/styles.[contenthash].css",
             chunkFilename: "[id].css"
+        }),
+        new Dotenv({
+            path: './production.env'
         })
     ]
 };
