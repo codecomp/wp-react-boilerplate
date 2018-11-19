@@ -13,7 +13,7 @@ const App = () => {
     return (
         <Router>
             <div>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={Loading}>
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/dynamic" component={AsyncDynamicPage} />
